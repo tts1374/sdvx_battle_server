@@ -43,11 +43,11 @@ def test_register_user_over_capacity_1():
 @pytest.mark.usefixtures("setup_dynamodb")
 def test_register_user_over_capacity_2():
     for i in range(2):
-        event = make_event(f"conn-{i}", "CONNECT", params={"roomId": "1111-2222", "mode": "2"})
+        event = make_event(f"conn-{i}", "CONNECT", params={"roomId": "1111-2222", "mode": "3"})
         response = register_user(event, context={})
         assert response['statusCode'] == 200
 
-    event_over = make_event("conn-5", "CONNECT", params={"roomId": "1111-2222", "mode": "2"})
+    event_over = make_event("conn-5", "CONNECT", params={"roomId": "1111-2222", "mode": "3"})
     response = register_user(event_over, context={})
     assert response['statusCode'] == 500
     assert "定員オーバー" in response['body']
