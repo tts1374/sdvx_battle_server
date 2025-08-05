@@ -1,0 +1,45 @@
+{
+  "resources": [
+    {
+      "name": "websocket_connect_role",
+      "resource_type": "iam_role",
+      "role_arn": "arn:aws:iam::219930336567:role/sdvx_battle_server-dev-websocket_connect",
+      "role_name": "sdvx_battle_server-dev-websocket_connect"
+    },
+    {
+      "name": "websocket_connect",
+      "resource_type": "lambda_function",
+      "lambda_arn": "arn:aws:lambda:ap-northeast-1:219930336567:function:sdvx_battle_server-dev-websocket_connect"
+    },
+    {
+      "name": "websocket_message_role",
+      "resource_type": "iam_role",
+      "role_arn": "arn:aws:iam::219930336567:role/sdvx_battle_server-dev-websocket_message",
+      "role_name": "sdvx_battle_server-dev-websocket_message"
+    },
+    {
+      "name": "websocket_message",
+      "resource_type": "lambda_function",
+      "lambda_arn": "arn:aws:lambda:ap-northeast-1:219930336567:function:sdvx_battle_server-dev-websocket_message"
+    },
+    {
+      "name": "websocket_disconnect_role",
+      "resource_type": "iam_role",
+      "role_arn": "arn:aws:iam::219930336567:role/sdvx_battle_server-dev-websocket_disconnect",
+      "role_name": "sdvx_battle_server-dev-websocket_disconnect"
+    },
+    {
+      "name": "websocket_disconnect",
+      "resource_type": "lambda_function",
+      "lambda_arn": "arn:aws:lambda:ap-northeast-1:219930336567:function:sdvx_battle_server-dev-websocket_disconnect"
+    },
+    {
+      "name": "websocket_api",
+      "resource_type": "websocket_api",
+      "websocket_api_url": "wss://a2vvmgf2t9.execute-api.ap-northeast-1.amazonaws.com/api/",
+      "websocket_api_id": "a2vvmgf2t9"
+    }
+  ],
+  "schema_version": "2.0",
+  "backend": "api"
+}
