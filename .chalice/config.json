@@ -1,0 +1,26 @@
+{
+  "version": "2.0",
+  "app_name": "sdvx_battle_server",
+  "stages": {
+    "dev": {
+      "api_gateway_stage": "api",
+      "autogen_policy": false,
+      "websocket_api_enabled": true,
+      "environment_variables": {
+        "APP_AWS_REGION": "ap-northeast-1",
+        "TABLE_NAME": "sdvx_room_dev",
+        "MAX_CONNECTIONS": "10"
+      }
+    },
+    "prod": {
+      "api_gateway_stage": "api",
+      "autogen_policy": false,
+      "websocket_api_enabled": true,
+      "environment_variables": {
+        "APP_AWS_REGION": "ap-northeast-1",
+        "TABLE_NAME": "sdvx_room",
+        "MAX_CONNECTIONS": "100"
+      }
+    }
+  }
+}
