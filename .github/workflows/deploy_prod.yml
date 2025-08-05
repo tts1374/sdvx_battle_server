@@ -38,8 +38,8 @@ jobs:
       - name: Configure AWS Credentials (PROD)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::219930336567:role/github-actions-deploy-prod-role
-          role-session-name: github-deploy-prod
+          role-to-assume: arn:aws:iam::219930336567:role/github-actions-deploy-sdvx-prod-role
+          role-session-name: github-deploy-sdvx-prod
           aws-region: ap-northeast-1
 
       - name: Deploy to AWS (Chalice Prod)

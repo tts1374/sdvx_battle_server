@@ -38,8 +38,8 @@ jobs:
       - name: Configure AWS Credentials (DEV)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::219930336567:role/github-actions-deploy-dev-role
-          role-session-name: github-deploy-dev
+          role-to-assume: arn:aws:iam::219930336567:role/github-actions-sdvx-deploy-dev-role
+          role-session-name: github-deploy-sdvx-dev
           aws-region: ap-northeast-1
 
       - name: Deploy to AWS (Chalice Dev)
