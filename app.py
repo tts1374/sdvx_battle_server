@@ -58,14 +58,14 @@ def register_user(event):
 
         current_count = len(response.get('Items', []))
 
-        if mode in ['1', '2'] and current_count >= 4:
+        if mode in ['1', '2', '5', '6'] and current_count >= 4:
             app.log.error(f"接続エラー: アリーナモード定員オーバー (current={current_count})")
             return {
                 'statusCode': 500,
                 'body': '接続できませんでした：定員オーバーです'
             }
 
-        if mode in ['3', '4'] and current_count >= 2:
+        if mode in ['3', '4', '7', '8'] and current_count >= 2:
             app.log.error(f"接続エラー: シングルモード定員オーバー (current={current_count})")
             return {
                 'statusCode': 500,
