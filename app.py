@@ -29,7 +29,7 @@ def register_user(event):
         room_id = params.get('roomId')
         mode = params.get('mode')
 
-        if not mode or mode not in ['1', '2', '3', '4', '5', '6']:
+        if not mode or mode not in ['1', '2', '3', '4', '5', '6', '7', '8']:
             app.log.error("接続エラー: モード形式不正")
             return {
                 'statusCode': 500,
@@ -58,15 +58,15 @@ def register_user(event):
 
         current_count = len(response.get('Items', []))
 
-        if mode in ['1', '2', '4', '5'] and current_count >= 4:
+        if mode in ['1', '2'] and current_count >= 4:
             app.log.error(f"接続エラー: アリーナモード定員オーバー (current={current_count})")
             return {
                 'statusCode': 500,
                 'body': '接続できませんでした：定員オーバーです'
             }
 
-        if mode in ['3', '6'] and current_count >= 2:
-            app.log.error(f"接続エラー: BPLバトルモード定員オーバー (current={current_count})")
+        if mode in ['3', '4'] and current_count >= 2:
+            app.log.error(f"接続エラー: シングルモード定員オーバー (current={current_count})")
             return {
                 'statusCode': 500,
                 'body': '接続できませんでした：定員オーバーです'
